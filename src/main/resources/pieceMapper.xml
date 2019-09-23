@@ -8,7 +8,7 @@
 	useGeneratedKeys="true"表示使用自动增长的主键 -->
     <insert id="insertPiece" parameterType="com.wells.lol.pojo.Piece"
             useGeneratedKeys="true" keyProperty="id">
-  	INSERT INTO t_piece(fname,fnumber,farmor,fresistance,fattack,fmagic,fattack_distance,fattack_speed,fcrit)
+  	INSERT INTO t_piece(fname,fnumber,farmo r,fresistance,fattack,fmagic,fattack_distance,fattack_speed,fcrit)
   	VALUES(#{name},#{number},#{armor},#{resistance},#{attack},#{magic},#{attack_distance},#{attack_speed},#{crit})
   </insert>
 
@@ -30,11 +30,11 @@
     </resultMap>
 
     <select id="getAllPiece"  resultMap="pieceMap">
-        select fname, fnumber from t_piece
+        select * from t_piece
     </select>
 
-    <select id="getPieceByName"  resultType="com.wells.lol.pojo.Piece">
-        select fname name from t_piece2 where fname = #{name}
+    <select id="getPieceByName"  resultMap="pieceMap">
+        select * from t_piece2 where fname = #{name}
         <if test="armor != null">
             and farmor &lt;&gt; 10
         </if>
@@ -50,26 +50,12 @@
         where farmor = #{armor};
     </update>
 
-    <insert id="insertPiece2" parameterType="com.wells.lol.pojo.Piece" useGeneratedKeys="true" keyProperty="id">
-  	INSERT INTO t_piece2(fname,fnumber,farmor,fresistance,fattack,fmagic,fattack_distance,fattack_speed,fcrit)
+    <insert id="insertPiece2" parameterType="com.wells.lol.pojo.Piece">
+  	INSERT INTO t_piece2(fname,fnumber,farmo r,fresistance,fattack,fmagic,fattack_distance,fattack_speed,fcrit)
         VALUES
         <foreach collection="list" item="piece" separator=",">
             (#{piece.name},#{piece.number},#{piece.armor},#{piece.resistance},#{piece.attack},#{piece.magic},#{piece.attack_distance},
             #{piece.attack_speed},#{piece.crit})
         </foreach>
   </insert>
-
-    <select id="selectIn"  resultMap="pieceMap">
-        select * from t_piece2 where fnumber in
-        <foreach collection="list" item="number" open="(" close=")" separator=",">
-            #{number}
-        </foreach>
-    </select>
-
-    <select id="selectMap"  resultMap="pieceMap">
-        select * from t_piece2 where fnumber in
-        <foreach collection="myMap.values" item="number" open="(" close=")" separator=",">
-            #{number}
-        </foreach>
-    </select>
 </mapper>

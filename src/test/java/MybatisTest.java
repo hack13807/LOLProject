@@ -24,7 +24,7 @@ public class MybatisTest {
             SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
             session = factory.openSession();
         } catch (IOException e) {
-            //wells899889111
+            //wells899889
             e.printStackTrace();
         }
     }

@@ -39,7 +39,7 @@ public class MybatisTest {
     @Test
     public void testMybatis(){
         Piece piece = new Piece();
-        piece.setArmor(110);//护甲
+        piece.setArmor(120);//护甲
         piece.setResistance(20);//魔抗
         piece.setAttack(80);//攻击力
         piece.setMagic(20);//法术强度

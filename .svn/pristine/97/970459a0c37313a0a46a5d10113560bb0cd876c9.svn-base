@@ -1,0 +1,12 @@
+package com.java.lol.piece;
+
+public class Nar extends Piece {
+    public Nar(String name, String[] jobName) {
+        super(name, jobName);
+    }
+
+    public Nar() {
+        super("ÄÉ¶û", new String[]{"¿ñÒ°","»»ĞÎÊ¦"});
+    }
+
+}

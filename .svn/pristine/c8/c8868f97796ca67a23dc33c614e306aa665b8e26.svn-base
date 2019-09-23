@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/java/lol/piece/Piece.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/common/JobEnum.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/common/Lineup.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/common/PieceFactory.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/expetion/PieceCountExpetion.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Devil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Empire.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Fighter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Gunners.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/JobSpecies.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Magician.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Ninja.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Noble.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Pirate.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/ShapeChanger.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Swordsman.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Wildness.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/job/Yodel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Ali.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Atox.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Draven.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Fiona.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Graves.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Lucian.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Nar.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Nidalee.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Piece.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Plonk.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Sarah.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Shen.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Tristana.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/piece/Warwick.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/test/LOLTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lol/test/TestAll.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

@@ -1,0 +1,83 @@
+package com.java.lol.common;
+
+import com.java.lol.job.JobSpecies;
+import com.java.lol.job.Rogue;
+import com.java.lol.piece.*;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+public class PieceFactory {
+    
+    public static Piece getPieceInstance(String name) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String[] withJob = name.split("&");
+        JobSpecies jobSpecies = null;
+        if (withJob.length > 1) {
+            name = withJob[0];
+            String job = withJob[1];
+            String className = JobEnum.getJobEnumByName(job);
+            Class<?> jobClass = Class.forName(className);
+            Method method = jobClass.getMethod("getInstance");
+            jobSpecies = (JobSpecies) method.invoke(JobSpecies.class);
+        }
+
+        Piece obj = null;
+        switch (name.trim()) {
+            case "Ð¡ÅÚ":
+                obj = new Tristana();
+                break;
+            case "°Â°ÍÂí":
+                obj = new Lucian();
+                break;
+            case "ºüÀê":
+                obj = new Ali();
+                break;
+            case "ÄÉ¶û":
+                obj = new Nar();
+                break;
+            case "ÀÇÈË":
+                obj = new Warwick();
+                break;
+            case "´¬³¤":
+                obj = new Plonk();
+                break;
+            case "±ªÅ®":
+                obj = new Nidalee();
+                break;
+            case "ÄÐÇ¹":
+                obj = new Graves();
+                break;
+            case "½£¼§":
+                obj = new Fiona();
+                break;
+            case "É÷":
+                obj = new Shen();
+                break;
+            case "½£Ä§":
+                obj = new Atox();
+                break;
+            case "µÂÀ³ÎÄ":
+                obj = new Draven();
+                break;
+            case "Å®Ç¹":
+                obj = new Sarah();
+                break;
+            case "ÑÇË÷":
+                obj = new Asia();
+                break;
+            case "Â¶Â¶":
+                obj = new Lulu();
+                break;
+            case "¿­ÄÏ":
+                obj = new Kennan();
+                break;
+            case "¹·ÐÜ":
+                obj = new Volibear();
+                break;
+        }
+        if (jobSpecies != null) {
+            obj.addJob(jobSpecies);
+        }
+        return obj;
+    }
+}

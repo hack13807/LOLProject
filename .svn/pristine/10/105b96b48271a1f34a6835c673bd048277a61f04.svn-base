@@ -1,0 +1,76 @@
+package com.wells.lol.table;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "t_piece")
+public class Piece implements Serializable {
+    @Id
+    private Long fid;
+
+    /**
+     * 棋子名称
+     */
+    @Column(name = "fname")
+    private String name;
+
+    /**
+     * 棋子编码
+     */
+    @Column(name = "fnumber")
+    private String number;
+
+    /**
+     * 攻击力
+     */
+    @Column(name = "fattack")
+    private int attack;
+
+    /**
+     * 法术强度
+     */
+    @Column(name = "fmagic")
+    private int magic;
+    /**
+     * 护甲
+     */
+    @Column(name = "farmor")
+    private int armor;
+
+    /**
+     * 法术抗性
+     */
+    @Column(name = "fresistance")
+    private int resistance;
+
+
+    /**
+     * 攻击距离
+     */
+    @Column(name = "fattack_distance")
+    private int attack_distance;
+
+    /**
+     * 攻击速度
+     */
+    @Column(name = "fattack_speed")
+    private int attack_speed;
+
+    /**
+     * 暴击率
+     */
+    @Column(name = "fcrit")
+    private int crit;
+
+    /**
+     * 技能
+     */
+    @Column(name = "fskills")
+    private int skills;
+
+
+}

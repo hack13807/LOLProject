@@ -1,0 +1,12 @@
+package com.java.lol.test;
+
+public class TestAll {
+
+    public static void say(){
+        System.out.println("asdasd");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("asdasdas");
+    }
+}

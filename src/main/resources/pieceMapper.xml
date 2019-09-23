@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wells.lol.mapper.PieceMapper">
+
+    <!-- insert，
+	parameterType="user"表示该插入语句需要一个user对象作为参数
+	useGeneratedKeys="true"表示使用自动增长的主键 -->
+    <insert id="insertPiece" parameterType="com.wells.lol.pojo.Piece"
+            useGeneratedKeys="true" keyProperty="id">
+  	INSERT INTO t_piece(fname,fnumber,farmor,fresistance,fattack,fmagic,fattack_distance,fattack_speed,fcrit)
+  	VALUES(#{name},#{number},#{armor},#{resistance},#{attack},#{magic},#{attack_distance},#{attack_speed},#{crit})
+  </insert>
+
+    <resultMap id="pieceMap" type="com.wells.lol.pojo.Piece">
+        <!-- 用id属性来映射主键字段 -->
+        <id column="fid" jdbcType="VARCHAR" property="id" />
+        <!-- 用result属性来映射非主键字段 -->
+        <result column="fname" jdbcType="VARCHAR" property="name" />
+        <result column="fnumber" jdbcType="VARCHAR" property="number" />
+        <result column="fattack" jdbcType="INTEGER" property="attack" />
+        <result column="fmagic" jdbcType="INTEGER" property="magic" />
+        <result column="farmor" jdbcType="INTEGER" property="armor" />
+        <result column="fresistance" jdbcType="INTEGER" property="resistance" />
+        <result column="fattack_distance" jdbcType="INTEGER" property="attack_distance" />
+        <result column="fattack_speed" jdbcType="FLOAT" property="attack_speed" />
+        <result column="fattack_speed" jdbcType="FLOAT" property="attack_speed" />
+        <result column="fcrit" jdbcType="INTEGER" property="crit" />
+        <result column="fskills" jdbcType="INTEGER" property="skills" />
+    </resultMap>
+
+    <select id="getAllPiece"  resultMap="pieceMap">
+        select fname, fnumber from t_piece
+    </select>
+
+    <select id="getPieceByName"  resultType="com.wells.lol.pojo.Piece">
+        select fname name from t_piece2 where fname = #{name}
+        <if test="armor != null">
+            and farmor &lt;&gt; 10
+        </if>
+    </select>
+
+    <update id="updateName" >
+        update t_piece2
+        <set>
+            <if test="name != null and name != ''">
+                fname = #{name},
+            </if>
+        </set>
+        where farmor = #{armor};
+    </update>
+
+    <insert id="insertPiece2" parameterType="com.wells.lol.pojo.Piece" useGeneratedKeys="true" keyProperty="id">
+  	INSERT INTO t_piece2(fname,fnumber,farmor,fresistance,fattack,fmagic,fattack_distance,fattack_speed,fcrit)
+        VALUES
+        <foreach collection="list" item="piece" separator=",">
+            (#{piece.name},#{piece.number},#{piece.armor},#{piece.resistance},#{piece.attack},#{piece.magic},#{piece.attack_distance},
+            #{piece.attack_speed},#{piece.crit})
+        </foreach>
+  </insert>
+
+    <select id="selectIn"  resultMap="pieceMap">
+        select * from t_piece2 where fnumber in
+        <foreach collection="list" item="number" open="(" close=")" separator=",">
+            #{number}
+        </foreach>
+    </select>
+
+    <select id="selectMap"  resultMap="pieceMap">
+        select * from t_piece2 where fnumber in
+        <foreach collection="myMap.values" item="number" open="(" close=")" separator=",">
+            #{number}
+        </foreach>
+    </select>
+</mapper>
